@@ -1,21 +1,24 @@
 'use strict';
 
 angular.module('todoListApp')
-.service('dataService', function($http){
-  this.helloWorld = function(){
-    console.log("This is the data's service method!");
+.service('dataService', function($http) {
+  this.helloWorld = function() {
+    console.log("This is the data service's method!!");
   };
 
   this.getTodos = function(callback){
-    $http.get('mock/todos.json').then(callback)
+    $http.get('mock/todos.json')
+    .then(callback)
   };
 
-  this.deleteTodo = function(todo){
-    console.log("The " + todo.name + " todo has been deleted.");
+  this.deleteTodo = function(todo) {
+    console.log("The " + todo.name + " todo has been deleted!")
     // other logic
   };
 
   this.saveTodo = function(todo) {
-    console.log("The " + todo.name + " todo has been saved.");
-  }
+    console.log("The " + todo.name + " todo has been saved!");
+    // other logic...
+  };
+
 });
